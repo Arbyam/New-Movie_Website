@@ -1,5 +1,7 @@
 const toggleButton = document.getElementsByClassName('toggle__btn')[0]
 const navbarLinks = document.getElementsByClassName('nav__bar--links')[0]
+const searchResults = document.querySelector(" .search__results--container");
+const searchResultsMovie = document.querySelector(" .search__results--movie")
 
 const movieListEl = document.querySelector('.movies')
 
@@ -16,6 +18,10 @@ async function onSearchChange(event){
         renderMovies(title),1000;
 })
 }
+
+// function searchResult(event){
+   
+// }
 
 
 async function renderMovies(movieName){
@@ -42,4 +48,7 @@ async function renderMovies(movieName){
 
         }
     }
+
+    searchResultsMovie.innerHTML = `<h2 class="search__results--movie">${movieName}</h2>`
 }
+
